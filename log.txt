@@ -1,0 +1,46 @@
+my steps:
+1. start P1 -- node P1.js
+2. start C1_1 -- node C1_1.js
+3. start C2_1 -- node C2_1.js
+4. stop C1_1 -- ctrl + C
+5. start C1_1 -- node C1_1.js
+
+#------------------------------------#
+running log:
+
+P1:
+
+johns-mac-2:try-smq loujy$ node P1.js
+P1 successfully!
+johns-mac-2:try-smq loujy$
+
+C1_1:
+
+johns-mac-2:try-smq loujy$ node C1_1.js
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 99 }
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 98 }
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 97 }
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 96 }
+^C
+johns-mac-2:try-smq loujy$ node C1_1.js
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 95 }
+C1 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 94 }
+^C
+johns-mac-2:try-smq loujy$
+
+
+C2_1:
+
+johns-mac-2:try-smq loujy$ node C2_1.js
+C2 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 96 }
+C2 got message:
+{ type: 'To C1', data: 'this is data', sequenceId: 96 }
+^C
+johns-mac-2:try-smq loujy$
